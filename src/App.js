@@ -146,6 +146,7 @@ function App() {
               <UserProfile userInformation={userInformation} />
             )}  
           </Route>
+          
         </Router>
     </div>
   );

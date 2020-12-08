@@ -4,11 +4,13 @@ function UserProfileComponent({ userInformation }) {
     return (
         <div>
             <p>
-                <strong>UID:</strong> {userInformation.uid}
+                <strong>UID: </strong> 
+                {userInformation.uid}
             </p>
 
             <p>
-                <strong>Email:</strong> {userInformation.email}
+                <strong>Email: </strong> 
+                {userInformation.email}
             </p>
         </div>
     );
