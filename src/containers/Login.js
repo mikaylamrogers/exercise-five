@@ -5,7 +5,7 @@ function Login({ LoginFunction }) {
     return (
         <div>
             <h1>Login</h1>
-            <Login Login={Login} />
+            <LoginForm LoginFunction={LoginFunction} />
         </div>
     );
 }

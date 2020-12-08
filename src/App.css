@@ -1,5 +1,7 @@
 .App {
-  
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 10px 20px;
 }
 
 .Header nav {
@@ -19,9 +21,18 @@
     text-decoration: underline;
 }
 
+.Header nav a:hover {
+    color: green;
+}
+
 .SignupForm {
     display: flex;
     flex-direction: column;
+    max-width: 400px;
+}
+
+.Loginform label {
+    margin-bottom: 5px;
 }
 
 .SignupForm input, .SignupForm button {

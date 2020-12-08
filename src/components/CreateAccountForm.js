@@ -9,6 +9,7 @@ function CreateAccountForm({ CreateAccountFunction }) {
 
                 <label htmlFor="createPassword">Password</label>
                 <input type="password" name="createPassword" />
+                
                 <button>Submit</button>
             </form>
         </div>

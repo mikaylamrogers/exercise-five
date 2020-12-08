@@ -36,7 +36,7 @@ function App() {
     if (!firebase.apps.length) {
       firebase.initializeApp(firebaseConfig);
     }
-  }, [firebaseConfig])
+  }, [firebaseConfig]);
 
   // Check to see if user is logged in...
   useEffect(() => {
@@ -50,8 +50,8 @@ function App() {
         setLoggedIn(false);
       }
       setLoading(false);
-    })
-  }, [])
+    });
+  }, []);
 
   // Function for logging in 
   function LoginFunction(e) {
@@ -112,42 +112,41 @@ function App() {
   return (
     <div className="App">
       <Header loggedIn={loggedIn} LogoutFunction={LogoutFunction} />
-      <Router>
+        <Router>
 
-        <Route exact path="/login">
-          {/* if someone is logged in, do not take them to login page 
-          - take them to user profile */}
+          <Route exact path="/login">
+            {/* if someone is logged in, do not take them to login page 
+            - take them to user profile */}
 
-          {!loggedIn ? (
-            <Login LoginFunction={LoginFunction}  />
-          ) : (
-            <Redirect to="/"  />
-          )}
-        </Route>
+            {!loggedIn ? (
+              <Login LoginFunction={LoginFunction}  />
+            ) : (
+              <Redirect to="/"  />
+            )}
+          </Route>
 
-        <Route exact path="/create-account">
-          {/* if someone is logged in , do not take them to createaccount 
-          - take them to user profile */}
+          <Route exact path="/create-account">
+            {/* if someone is logged in , do not take them to createaccount 
+            - take them to user profile */}
 
-          {!loggedIn? (
-            <CreateAccount CreateAccountFunction={CreateAccountFunction} />
-          ) : (
-            <Redirect to="/"  />
-          )}
-        </Route>
+            {!loggedIn ? (
+              <CreateAccount CreateAccountFunction={CreateAccountFunction} />
+            ) : (
+              <Redirect to="/"  />
+            )}
+          </Route>
 
-        <Route exact path="/">
-          {/* if someone is not logged in, do not take them to user profile page 
-          - take them to login */}
+          <Route exact path="/">
+            {/* if someone is not logged in, do not take them to user profile page 
+            - take them to login */}
 
-          {!loggedIn ? (
-            <Redirect to="/login"  />
-          ) : (
-            <UserProfile userInformation={userInformation} />
-          )}  
-        </Route>
-      </Router>
-
+            {!loggedIn ? (
+              <Redirect to="/login"  />
+            ) : (
+              <UserProfile userInformation={userInformation} />
+            )}  
+          </Route>
+        </Router>
     </div>
   );
 }
